@@ -28,13 +28,7 @@ It aims to:
 ---
 ## ⚙️ Tech Stack
 
-- **Python** (TensorFlow / OpenCV / NumPy / Pandas)
-- **MobileNetV2 / CNN** for detection
+- **Python** (TensorFlow / OpenCV / NumPy / Pandas / Pytorch)
+- **Yolo** for detection and classification
 - **Matplotlib/ Seaborn** for visualizations
 - **PyAudio / Playsound** for audio alerts (Optional)
-- **CSV / Pandas** for logging system (Optional)
-
-## Work Snapshot
-- A baseline model using **YOLO11s-cls** on **DDD**: https://www.kaggle.com/code/hatemfeckry/notebookd991b7d722
-    - **Conculsion**: The model demonstarted that the dataset is exteremely simple and a pretrained light weight model managed to achieve almost perfect classification accuracy in only two epochs.
-    - **Future Direction**: Find a more complex dataset with varied scenes and different lighting conditions. 
