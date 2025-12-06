@@ -6,6 +6,7 @@ import numpy as np
 import cv2
 import os
 
+
 app = Flask(__name__)
 CORS(app)
 
