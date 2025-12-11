@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Drive Guard </title>
+  <meta name=" viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="DriveGuard_Logo_-_Driver_Safety_Emblem-removebg-preview.png" alt="Drive Guard" />
+      </div>
+
+      <nav class="side-nav">
+        <a href="first.html"><button class="nav-btn active">Dashboard</button></a>
+        
+        <a href="about.html"><button class="nav-btn">About us</button></a>
+        <a href="userguide.html"><button class="nav-btn">User guide</button></a>
+      </nav>
+
+      <div class="sidebar-footer">JS•ST</div>  
+    </aside>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <!-- TOPBAR -->
+      <!-- <header class="topbar">
+        <div class="search">
+          <input placeholder="Search..." />
+        </div> -->
+        
+
+        <div class="top-actions">
+          <<div id="userStatus" class="user"></div>
+        </div>
+
+      <!-- DASHBOARD GRID -->
+      <main class="dashboard">
+
+        <!-- LEFT: Live Camera card -->
+        <section class="panel live-panel">
+          <div class="panel-header">
+            <h3>DriveGuard</h3>
+            <div class="panel-actions">
+              <button id="liveIndicator" class="live-dot" style="display:none">LIVE</button>
+              <button id="alertBtn" class="ghost" style="display:none">+ Alert</button>
+
+            </div>
+          </div>
+
+           <div class="live-content">
+            <button class="exit-btn">Exit</button>
+            <h2>Driver Monitor</h2>
+            <video id="video" autoplay playsinline muted></video>
+            <div class="controls">
+               <button id="startBtn" class="primary">Start Monitoring</button>
+              <button id="stopBtn" class="secondary">Stop</button>
+            </div>
+          </div>
+        </section> 
+
+        <!-- RIGHT: Status cards -->
+        <aside class="status-column">
+          <div class="status-card" id="card-drowsy">
+            <div class="card-title">Drowsiness</div>
+            <div class="card-body">
+              <div class="status-value" id="drowsyStatus">—</div>
+              <div class="status-bar">
+                <div class="bar-fill" id="drowsyBar" style="width:0%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="status-card" id="card-phone">
+            <div class="card-title">Phone Usage</div>
+            <div class="card-body">
+              <div class="status-value" id="phoneStatus">—</div>
+              <div class="status-bar">
+                <div class="bar-fill" id="phoneBar" style="width:0%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="status-card" id="card-drink">
+            <div class="card-title">Drinking</div>
+            <div class="card-body">
+              <div class="status-value" id="drinkStatus">—</div>
+              <div class="status-bar">
+                <div class="bar-fill" id="drinkBar" style="width:0%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="status-card" id="card-smoking">
+            <div class="card-title">Smoking</div>
+            <div class="card-body">
+              <div class="status-value" id="smokeStatus">—</div>
+              <div class="status-bar">
+                <div class="bar-fill" id="smokeBar" style="width:0%"></div>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- FULL WIDTH: Event log -->
+        <section class="panel log-panel">
+          <div class="panel-header">
+            <h3>Event Log</h3>
+                <button id="downloadReportBtn" class="secondary" >
+                  Download Report
+                </button>
+
+          </div>
+
+          <div class="log-table-wrap">
+            <table class="log-table" id="eventLog">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Event</th>
+                  <th>Code</th>
+                  <th>Type</th>
+                  <th>Time</th>
+                  <th>Severity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- rows will be appended by script.js -->
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+  <footer class="site-footer">
+    <div>© Jana — Driver Guard </div>
+    <div class="footer-links">
+      <a href="about.html">About</a> ·
+      <a href="userguide.html">User Guide</a>
+    </div>
+  </footer>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

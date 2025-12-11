@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About — Drive Guard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="DriveGuard_Logo_-_Driver_Safety_Emblem-removebg-preview.png" alt="Drive Guard" />
+      </div>
+
+      <nav class="side-nav">
+        <a href="first.html"><button class="nav-btn">Dashboard</button></a>
+        
+        <a href="about.html"><button class="nav-btn active">About us</button></a>
+        <a href="userguide.html"><button class="nav-btn">User guide</button></a>
+      </nav>
+
+      <div class="sidebar-footer">JS•ST</div>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="main">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="top-actions">
+          <div class="user" id="userStatus">User</div>
+        </div>
+      </header>
+
+      <!-- PAGE HEADER -->
+      <div class="page-header">
+        <h1>About Us</h1>
+        <div class="page-subtitle">Learn about our driver monitoring system</div>
+      </div>
+
+      <!-- PAGE CONTENT -->
+      <main class="page-wrapper">
+        <div class="doc-page">
+          <h2>About this project</h2>
+          <p>
+            Driver Monitor Web is a small demo application that captures webcam frames in the browser and sends them to a backend for ML inference. The goal is to make it easy to plug in existing driver-monitoring models (drowsiness detection, smoking detection, phone-use detection, etc.) and view alerts in real time.
+          </p>
+
+          <div class="doc-section">
+            <h3>Who built this</h3>
+            <p>Created by Jana. This repo is intended as a personal starter/experiment for building and iterating on driver-monitoring models and a minimal web UI.</p>
+          </div>
+
+          <div class="doc-section">
+            <h3>Design goals</h3>
+            <ul>
+              <li>Simple and clear: minimal UI so the ML models are the focus.</li>
+              <li>Easy to extend: plug in TensorFlow / PyTorch / ONNX models on the server side.</li>
+              <li>Local-first: run locally for development and testing, then adapt for deployment.</li>
+            </ul>
+          </div>
+
+          <div class="doc-section">
+            <h3>Contact</h3>
+            <p>If you want help integrating a model or adding features, update the repo or contact Jana.</p>
+          </div>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div>© Jana&samaa — Driver Monitor Web</div>
+        <div class="footer-links">
+          <a href="about.html">About</a> ·
+          <a href="userguide.html">User Guide</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

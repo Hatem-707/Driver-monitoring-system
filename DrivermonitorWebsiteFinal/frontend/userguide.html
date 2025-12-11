@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>User Guide — Driver Monitor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="DriveGuard_Logo_-_Driver_Safety_Emblem-removebg-preview.png" alt="Drive Guard" />
+      </div>
+
+      <nav class="side-nav">
+        <a href="first.html"><button class="nav-btn">Dashboard</button></a>
+        
+        <a href="about.html"><button class="nav-btn">About us</button></a>
+        <a href="userguide.html"><button class="nav-btn active">User guide</button></a>
+      </nav>
+
+      <div class="sidebar-footer">JS•ST</div>
+    </aside> 
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="main">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="top-actions">
+          <div class="user" id="userStatus">User</div>
+        </div>
+      </header>
+
+      <!-- PAGE HEADER -->
+    <div class="page-header">
+      <h1>User Guide</h1>
+      <div class="page-subtitle">Driver Monitor System Documentation</div>
+    </div>
+
+      <!-- PAGE CONTENT -->
+      <main class="page-wrapper">
+        <div class="doc-page">
+          <h2>Quick start</h2>
+          <ol>
+            <li>Start the Python model server (if you use it): run the Flask server in flask_server/ as described in README.</li>
+            <li>Start the Node server: npm install, then npm start in project root.</li>
+            <li>Open <strong>http://localhost:5000</strong> in your browser. Click "Start Camera".</li>
+          </ol>
+
+          <div class="doc-section">
+            <h3>UI controls</h3>
+            <ul>
+              <li><strong>Start Camera</strong> — asks for permission and starts capturing frames.</li>
+              <li><strong>Stop Camera</strong> — stops capture and camera stream.</li>
+              <li><strong>Interval</strong> — adjust how often frames are captured and sent (ms).</li>
+            </ul>
+          </div>
+
+          <div class="doc-section">
+            <h3>What to expect</h3>
+            <p>When frames are sent, the backend will return JSON results from the model(s). Results appear on the right side as alerts and a small log of events.</p>
+          </div>
+
+          <div class="doc-section">
+            <h3>Integrating your models</h3>
+            <p>If your models are Python-based, put them in <code>flask_server/models/</code> and update <code>flask_server/app.py</code> to load and run them. If models run in JS, you can also run them in Node or the browser.</p>
+            <p>Key points:</p>
+            <ul>
+              <li>Load models once at server start (not per request).</li>
+              <li>Preprocess images to the right size and normalization your model expects.</li>
+              <li>Return a simple JSON object the frontend can display (see README schema).</li>
+            </ul>
+          </div>
+
+          <div class="doc-section">
+            <h3>Troubleshooting</h3>
+            <ul>
+              <li>Camera permission errors: serve the page from <code>http://localhost</code> or HTTPS.</li>
+              <li>Blank video: ensure the browser supports getUserMedia and no other tab is using the camera exclusively.</li>
+              <li>Slow inference: increase the capture interval or run models on a faster machine/GPU.</li>
+            </ul>
+          </div>
+
+          <div class="doc-section">
+            <h3>Next steps</h3>
+            <ul>
+              <li>Wire your real models into the Flask server.</li>
+              <li>Create Docker and docker-compose files to run Node + Flask together.</li>
+              <li>Consider WebSocket for lower latency streaming.</li>
+            </ul>
+          </div>
+        </div>
+      </main>
+
+      <footer class="site-footer">
+        <div>© Jana — Driver Monitor Web</div>
+        <div class="footer-links">
+          <a href="about.html">About</a> ·
+          <a href="userguide.html">User Guide</a>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

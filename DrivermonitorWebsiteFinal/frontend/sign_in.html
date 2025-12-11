@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriveGuard - Sign Up / Sign In</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+<body>
+    <div class="container">
+        <img src="DriveGuard_Logo_-_Driver_Safety_Emblem-removebg-preview.png" alt="DriveGuard Logo" class="logo"> 
+        <h2>Welcome to DriveGuard</h2>
+        <form id="signup-form" onsubmit="handleFormSubmit(event)">
+            <input type="text" placeholder="Username" required>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>or</p>
+        <form id="signin-form" onsubmit="handleFormSubmit(event)">
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+        </form>
+        <a href="#" class="link">Forgot Password?</a>
+        <button class="guest-btn" onclick="handleGuestAccess()">Continue as Guest</button>
+    </div>
+
+    <script>
+    function handleFormSubmit(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const inputs = form.querySelectorAll("input");
+    const username = inputs[0].value; // first input is username (Sign up) or email (Sign in)
+
+    localStorage.setItem("isGuest", "false");
+    localStorage.setItem("username", username);
+
+    window.location.href = "first.html";
+    
+}
+function handleGuestAccess() {
+    localStorage.setItem("isGuest", "true");
+    localStorage.setItem("username", "Guest");
+    window.location.href = "first.html";
+}
+
+
+</script>
+<script src="script.js"></script>
+
+</body>
+
+</html>
